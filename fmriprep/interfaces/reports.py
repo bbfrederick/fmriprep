@@ -123,8 +123,8 @@ class SubjectSummary(SummaryInterface):
         # BBF begin
         print('bold_series:')
         for series in bold_series:
-            print(series)
-            print(BIDS_NAME.search(series).groupdict()['task_id'])
+            print('\t', series)
+            print('\t', BIDS_NAME.search(series).groupdict()['task_id'])
             print()
         # BBF end
 
