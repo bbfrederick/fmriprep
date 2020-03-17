@@ -120,14 +120,6 @@ class SubjectSummary(SummaryInterface):
         bold_series = self.inputs.bold if isdefined(self.inputs.bold) else []
         bold_series = [s[0] if isinstance(s, list) else s for s in bold_series]
 
-        # BBF begin
-        print('bold_series:')
-        for series in bold_series:
-            print('\t', series)
-            print('\t', BIDS_NAME.search(series).groupdict()['task_id'])
-            print()
-        # BBF end
-
         counts = Counter(BIDS_NAME.search(series).groupdict()['task_id'][5:]
                          for series in bold_series)
 
